@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= link_to "[Articles]", articles_url %> |
+<%= link_to "[Authors]", authors_url %> |
+<%= form_tag({:action => "index"}, :method => :get) do %>
+  Search:
+  <%= text_field_tag :search, params[:search] %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
